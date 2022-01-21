@@ -1,14 +1,38 @@
-const cliente1Nome = "Ricardo";
-const cliente1CPF = 11122233309;
-const cliente1Agencia = 1001;
-const cliente1Saldo = 0;
+class cliente {
+    nome;
+    cpf;
 
-const cliente2Nome = "Alice"
-const cliente2CPF = 88822233309;
-const cliente2Agencia = 1001;
-const cliente2Saldo = 0;
+}
 
-const cliente3Nome = "Alice"
-const cliente3CPF = 88822233309;
-const cliente3Agencia = 1001;
-const cliente3Saldo = 0;
+class contaCorrente {
+    agencia;
+    saldo = 0;
+
+    sacar(valor) {
+        if (this.#saldo >= valor) {
+            this.#saldo -= valor;
+        }
+    }
+
+    depositar(valor) {
+        if (valor > 0) {
+            this.#saldo += valor
+        }
+    }
+}
+
+
+const cliente1 = new cliente();
+cliente1.nome = "Ricardo";
+cliente1.cpf = 11122233309;
+
+const cliente2 = new cliente();
+cliente2.nome = "Alice"
+cliente2.cpf = 88822233309;
+
+const contaCorrenteRicardo = new contaCorrente()
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.agencia = 1001;
+contaCorrenteRicardo.sacar(50)
+console.log(contaCorrenteRicardo.#saldo)
