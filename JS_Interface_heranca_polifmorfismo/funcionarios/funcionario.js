@@ -6,8 +6,8 @@ export class Funcionario {
         this._bonificacao = 1;
     }
 
-    get senha(){
-        return this._senha;
+    autenticar(senha){
+        return senha == this._senha
     }
 
     cadastrarSenha(senha){
