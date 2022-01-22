@@ -1,5 +1,3 @@
-import {Cliente} from "./Cliente.js";
-
 export class Conta{
     constructor(saldoInicial, cliente, agencia){
         this._saldo = saldoInicial;
@@ -16,10 +14,18 @@ export class Conta{
     }
     
     sacar(valor){
-        if(this._saldo >= valor){
-            this._saldo -= valor;
-            return valor;
+        let taxa  = 1;
+        return this._sacar(valor, taxa);
+    }
+
+    _sacar() {
+        const valorSacado = taxa * valor;
+        if(this._saldo >= valorSacado) {
+            this._saldo -= valorSacado;
+            return valorSacado;
         }
+
+        return 0;
     }
 
     depositar(valor){
