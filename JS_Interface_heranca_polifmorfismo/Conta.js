@@ -17,12 +17,12 @@ export class Conta{
         return this._saldo
     }
     
+    //para proteger de saques errados//método abstrato
     sacar(valor){
-        let taxa  = 1;
-        return this._sacar(valor, taxa);
+        throw new Error("conta não habilitada para saque")
     }
 
-    _sacar() {
+    _sacar(valor, taxa) {
         const valorSacado = taxa * valor;
         if(this._saldo >= valorSacado) {
             this._saldo -= valorSacado;
